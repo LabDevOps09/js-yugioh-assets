@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakura Jo-Ken-Po Edition</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>🌸 Sakura Card Captors | Jo-Ken-Po 🌸</h1>
+    <p>Escolha sua carta:</p>
+
+    <div class="choices">
+      <button onclick="play('ataque')">⚔ Ataque</button>
+      <button onclick="play('defesa')">🛡 Defesa</button>
+      <button onclick="play('magia')">✨ Magia</button>
+    </div>
+
+    <div class="result">
+      <p id="player-choice">Você jogou: -</p>
+      <p id="computer-choice">Computador jogou: -</p>
+      <h2 id="winner">Resultado: -</h2>
+    </div>
+
+    <div class="score">
+      <p>👤 Jogador: <span id="player-score">0</span></p>
+      <p>💻 Computador: <span id="computer-score">0</span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
