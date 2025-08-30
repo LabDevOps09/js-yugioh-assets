@@ -2,32 +2,32 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sakura Jo-Ken-Po Edition</title>
+  <title>Yu-Gi-Oh! RPG Challenge</title>
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
   <div class="game-container">
-    <h1>🌸 Sakura Card Captors | Jo-Ken-Po 🌸</h1>
-    <p>Escolha sua carta:</p>
-
-    <div class="choices">
-      <button onclick="play('ataque')">⚔ Ataque</button>
-      <button onclick="play('defesa')">🛡 Defesa</button>
-      <button onclick="play('magia')">✨ Magia</button>
-    </div>
-
-    <div class="result">
-      <p id="player-choice">Você jogou: -</p>
-      <p id="computer-choice">Computador jogou: -</p>
-      <h2 id="winner">Resultado: -</h2>
-    </div>
-
-    <div class="score">
-      <p>👤 Jogador: <span id="player-score">0</span></p>
-      <p>💻 Computador: <span id="computer-score">0</span></p>
+    <h1>Yu-Gi-Oh! RPG Challenge</h1>
+    <p>Clique no botão para calcular a média das suas cartas!</p>
+    
+    <input type="number" id="valor1" placeholder="Valor 1">
+    <input type="number" id="valor2" placeholder="Valor 2">
+    <input type="number" id="valor3" placeholder="Valor 3">
+    <button onclick="calcularMedia()">Calcular Média</button>
+    
+    <p id="resultado"></p>
+    
+    <div class="icons">
+      <img src="src/icons/dragon.png" alt="Dragão">
+      <img src="src/icons/magician.png" alt="Mago Negro">
+      <img src="src/icons/exodia.png" alt="Exodia">
     </div>
   </div>
+
+  <!-- Sons -->
+  <audio id="winSound" src="src/audio/win.wav"></audio>
+  <audio id="loseSound" src="src/audio/lose.wav"></audio>
+  <audio id="duelMusic" src="src/audio/egyptian_duel.mp3" loop></audio>
 
   <script src="script.js"></script>
 </body>
