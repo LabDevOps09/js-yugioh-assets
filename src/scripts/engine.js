@@ -1,30 +1,29 @@
-let playerScore = 0;
-let computerScore = 0;
+function calcularMedia() {
+  let v1 = Number(document.getElementById("valor1").value);
+  let v2 = Number(document.getElementById("valor2").value);
+  let v3 = Number(document.getElementById("valor3").value);
 
-function play(playerChoice) {
-  const choices = ["ataque", "defesa", "magia"];
-  const computerChoice = choices[Math.floor(Math.random() * 3)];
-
-  document.getElementById("player-choice").innerText = "Você jogou: " + playerChoice;
-  document.getElementById("computer-choice").innerText = "Computador jogou: " + computerChoice;
-
-  let result = "";
-
-  if (playerChoice === computerChoice) {
-    result = "Empate! 🌙";
-  } else if (
-    (playerChoice === "ataque" && computerChoice === "magia") ||
-    (playerChoice === "magia" && computerChoice === "defesa") ||
-    (playerChoice === "defesa" && computerChoice === "ataque")
-  ) {
-    result = "Você venceu! 🌸";
-    playerScore++;
-  } else {
-    result = "Computador venceu! 💀";
-    computerScore++;
+  if (isNaN(v1) || isNaN(v2) || isNaN(v3)) {
+    document.getElementById("resultado").innerText = "Digite valores válidos!";
+    return;
   }
 
-  document.getElementById("winner").innerText = result;
-  document.getElementById("player-score").innerText = playerScore;
-  document.getElementById("computer-score").innerText = computerScore;
+  let media = (v1 + v2 + v3) / 3;
+  document.getElementById("resultado").innerText = "Média: " + media.toFixed(2);
+
+  let winSound = document.getElementById("winSound");
+  let loseSound = document.getElementById("loseSound");
+
+  if (media >= 7) {
+    winSound.play();
+  } else {
+    loseSound.play();
+  }
 }
+
+// Inicia música de fundo
+window.onload = function() {
+  let duelMusic = document.getElementById("duelMusic");
+  duelMusic.volume = 0.5;
+  duelMusic.play();
+};
